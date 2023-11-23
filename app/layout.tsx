@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import type { FC, ReactNode } from "react";
 import { inter, spaceGrotesk } from "@/utils/fonts";
 import { appearance } from "@/lib/clerk";
+import ThemeProvider from "@/context/ThemeProvider";
+import { ThemeKeys } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Dev Overflow",
@@ -40,7 +42,13 @@ const RootLayout: FC<IRootLayout> = ({ children }) => {
   return <ClerkProvider appearance={appearance}>
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${inter.className}`}>
-        {children}
+        <ThemeProvider
+          defaultTheme={ThemeKeys.SYSTEM}
+          attribute="class"
+          enableSystem
+          disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html >
   </ClerkProvider >

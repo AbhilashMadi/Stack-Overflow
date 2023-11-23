@@ -2,7 +2,7 @@ import type { Appearance } from "@clerk/types";
 
 export const appearance: Appearance = {
   variables: {
-    borderRadius: "0.25rem",
+    borderRadius: "0.1rem",
     colorPrimary: "#FF7000",
   },
   elements: {
