@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     "Programming Tips",
     "Developer Networking"
   ],
+  icons: {
+    icon: ["/public/favicon.ico"],
+  }
 }
 
 interface IRootLayout {
